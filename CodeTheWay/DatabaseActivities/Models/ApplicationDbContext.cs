@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseActivities.Models.Entity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -23,5 +24,7 @@ namespace DatabaseActivities.Models
             modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
         }
+        public DbSet<StudentModel> Students { get; set; }
+        public DbSet<NoteModel> Notes { get; set; }
     }
 }
