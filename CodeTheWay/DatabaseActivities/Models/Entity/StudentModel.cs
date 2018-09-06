@@ -14,6 +14,10 @@ namespace DatabaseActivities.Models.Entity
         public List<NoteModel> NoteList { get; set; }
         public Double GetRating()
         {
+            if (NoteList.Count == null)
+            {
+                return 0;
+            }
             double Sum = NoteList.Sum(S => S.Rating);
             return Sum / NoteList.Count;
         }
