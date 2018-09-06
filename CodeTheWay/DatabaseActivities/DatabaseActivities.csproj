@@ -204,7 +204,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\CreateStudent.cshtml" />
-    <Content Include="Views\Student\DetailStudent.cshtml" />
     <Content Include="Views\Student\EditStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>

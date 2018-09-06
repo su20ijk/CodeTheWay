@@ -1,7 +1,28 @@
-﻿
+﻿@using DatabaseActivities.Models.Entity
+@model List<StudentModel>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<div class="container">
+    @Html.ActionLink("Create", "CreateStudent", "Student", new { }, new { @class = "primary-font hbutton color-blue col-lg-offset-8 col-xs-2" })
+</div>
+<table class="table">
+    <tr class="color-white table-head primary-font">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Grade</th>
+        <th><br/></th>
+    </tr>
+    @foreach (StudentModel student in Model)
+    {
+        <tr class="table-row" onclick="location.href='@Url.Action()'">
+            <td>@student.FirstName</td>
+            <td>@student.LastName</td>
+            <td>@student.Grade</td>
+            <td>
+                <a href="@Url.Action("EditStudent", "Student", new { id = student.Id})" class="hbutton primary-font color-blue hoverHide">Edit</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -25,15 +25,6 @@ namespace DatabaseActivities.Controllers
             service.AddStudent(student);
             return RedirectToAction("Index", service.GetAllStudents());
         }
-        public ActionResult DetailStudent(int id)
-        {
-            StudentModel StudentDetail = service.GetStudentById(id);
-            if (StudentDetail == null)
-            {
-                return HttpNotFound();
-            }
-            return View(StudentDetail);
-        }
         public ActionResult EditStudent(int id)
         {
             StudentModel StudentToEdit = service.GetStudentById(id);
@@ -48,7 +39,7 @@ namespace DatabaseActivities.Controllers
         {
             student.Id = IdTP;
             service.EditStuent(student);
-            return RedirectToAction("DetailStudent", "Soldier", new { id = student.Id});
+            return RedirectToAction("EditStudent", "Soldier", new { id = student.Id});
         }
     }
 }
