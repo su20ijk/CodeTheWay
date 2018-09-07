@@ -39,7 +39,7 @@ namespace DatabaseActivities.Controllers
         {
             student.Id = IdTP;
             service.EditStuent(student);
-            return RedirectToAction("EditStudent", "Soldier", new { id = student.Id});
+            return RedirectToAction("EditStudent", "Student", new { id = student.Id});
         }
     }
 }

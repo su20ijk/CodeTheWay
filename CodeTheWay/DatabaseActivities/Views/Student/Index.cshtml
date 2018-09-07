@@ -5,15 +5,19 @@
 }
 
 <div class="container">
-    @Html.ActionLink("Create", "CreateStudent", "Student", new { }, new { @class = "primary-font hbutton color-blue col-lg-offset-8 col-xs-2" })
+    <div class="row row-spacing-sm">
+<br />
+        <input v-model="toSearch" class="col-lg-2" placeholder="Search" v-on:input="search" />
+        @Html.ActionLink("Create", "CreateStudent", "Student", new { }, new { @class = "primary-font hbutton color-blue col-lg-offset-8 col-xs-2" })
+    </div>
 </div>
-<table class="table">
+<table class="table" id="myTable">
     <tr class="color-white table-head primary-font">
         <th>First Name</th>
         <th>Last Name</th>
         <th>Grade</th>
         <th>Ratings</th>
-        <th><br/></th>
+        <th><br /></th>
     </tr>
     @foreach (StudentModel student in Model)
     {
@@ -28,3 +32,34 @@
         </tr>
     }
 </table>
+@section scripts{
+
+    <script type="text/javascript" src="~/Content/JavaScript.js"></script>
+    <script>
+
+        var app = new Vue({
+            el: '#vuebox',
+            data: {
+                toSearch: "",
+            },
+            methods: {
+                search: function () {
+                    var tbl = document.getElementById("myTable").rows;
+                    search(tbl, this.toSearch);
+                },
+                sort: function (column) {
+                    var tbl = document.getElementById("myTable");
+                    sort(tbl, column);
+                },
+                sortId: function (column) {
+                    var tbl = document.getElementById("myTable");
+                    sortNumber(tbl, column)
+                },
+                sortDate: function (column) {
+                    var tbl = document.getElementById("myTable");
+                    sortDate(tbl, column);
+                }
+            }
+        });
+    </script>
+}

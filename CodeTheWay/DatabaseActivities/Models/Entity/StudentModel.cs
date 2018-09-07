@@ -14,7 +14,7 @@ namespace DatabaseActivities.Models.Entity
         public List<NoteModel> NoteList { get; set; }
         public Double GetRating()
         {
-            if (NoteList.Count == null)
+            if (NoteList== null)
             {
                 return 0;
             }

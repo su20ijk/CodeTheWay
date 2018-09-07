@@ -1,7 +1,36 @@
-﻿ 
+﻿@using DatabaseActivities.Models.Entity
+@model StudentModel
 @{
     ViewBag.Title = "EditStudent";
 }
-
-<h2>EditStudent</h2>
-
+<div class="container">
+    <form action="~/Student/StudentEdit" autocomplete="off" method="post">
+        <input name="IdTP" value="@Model.Id" hidden="hidden" />
+        <div class="row row-spacing-sm">
+            @Html.ActionLink("Back", "Index", "Student", new { @class = "hbutton color-red" })
+        </div>
+        <div class="row row-spacing-sm">
+            <div class=col-lg-6>
+                <div>First Name</div>
+                <input class="form-input" name="FirstName" value="@Model.FirstName" />
+            </div>
+            <div class="col-lg-6">
+                <div>Last Name</div>
+                <input class="form-input" name="LastName" value="@Model.LastName" />
+            </div>
+        </div>
+        <div class="row row-spacing-sm">
+            <div class="col-lg-6">
+                <div>Grade</div>
+                <select class="form-input" name="Grade">
+                    <option value="" selected="selected" disabled="disabled">@Model.Grade</option>
+                    <option value="9">Freshman</option>
+                    <option value="10">Sophomore</option>
+                    <option value="11">Junior</option>
+                    <option value="12">Senior</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-center"><button class="primary-font hbutton color-blue" type="submit">Create</button></div>
+    </form>
+</div>

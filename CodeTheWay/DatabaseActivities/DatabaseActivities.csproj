@@ -154,9 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809061910028_StudentsNotes.cs" />
-    <Compile Include="Migrations\201809061910028_StudentsNotes.Designer.cs">
-      <DependentUpon>201809061910028_StudentsNotes.cs</DependentUpon>
+    <Compile Include="Migrations\201809071939530_StudentNote.cs" />
+    <Compile Include="Migrations\201809071939530_StudentNote.Designer.cs">
+      <DependentUpon>201809071939530_StudentNote.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -172,6 +172,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\JavaScript.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -228,8 +229,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809061910028_StudentsNotes.resx">
-      <DependentUpon>201809061910028_StudentsNotes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809071939530_StudentNote.resx">
+      <DependentUpon>201809071939530_StudentNote.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
